@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+    <title>Machine Learning Proficiency</title>
+    <style>
+        .nav-link {
+            color: rgb(250, 227, 227);
+            font-size: large;
+            transition: color 0.5s;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        .container{
+            background-color: rgb(250, 224, 224);
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .questions {
+            color: rgb(74, 74, 74);
+            font-size: large;
+        }
+        .footer {
+            background-color: rgb(255, 168, 168);
+            padding: 5px 0px 5px 0px;
+            text-align: center;
+            color: rgb(255, 255, 255);
+            font-size: 24px;
+            bottom: 0;
+            width: 100%;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="light">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mlq.html">Projects</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h2 style="text-align: center; margin-top: 20px;">Test your Machine Learning Proficiency!</h2>
+
+    <div class="container">
+        <form id="mlForm">
+        <div class="questions">
+            <fieldset class="form-group">
+                <p style="margin-top: 40px;">1. Have you heard of the term "machine learning" before?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios1" id="optionsRadios1a" value="option1" required>
+                    <label class="form-check-label" for="optionsRadios1a">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios1" id="optionsRadios1b" value="option2" required>
+                    <label class="form-check-label" for="optionsRadios1b">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios1" id="optionsRadios1c" value="option3" required>
+                    <label class="form-check-label" for="optionsRadios1c">
+                        Not Sure
+                    </label>
+                </div>
+            </fieldset><br></br>
+
+            <fieldset class="form-group">
+                <p>2. Are you aware of any common applications of machine learning?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios2" id="optionsRadios2a" value="option1" required>
+                    <label class="form-check-label" for="optionsRadios2a">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios2" id="optionsRadios2b" value="option2"required>
+                    <label class="form-check-label" for="optionsRadios2b">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios2" id="optionsRadios2c" value="option3"required>
+                    <label class="form-check-label" for="optionsRadios2c">
+                        Not Sure
+                    </label>
+                </div>
+            </fieldset><br></br>
+
+            <fieldset class="form-group">
+                <p>3. Did you ever come across machine learning in your field?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios3" id="optionsRadios3a" value="option1" required >
+                    <label class="form-check-label" for="optionsRadios3a">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios3" id="optionsRadios3b" value="option2" required>
+                    <label class="form-check-label" for="optionsRadios3b">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios3" id="optionsRadios3c" value="option3" required>
+                    <label class="form-check-label" for="optionsRadios3c">
+                        Not Sure
+                    </label>
+                </div>
+            </fieldset><br></br>
+            
+            <fieldset class="form-group">
+                <p>4. Do you know about supervised and unsupervised learning in machine learning?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios4" id="optionsRadios4a" value="option1" required >
+                    <label class="form-check-label" for="optionsRadios4a">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios4" id="optionsRadios4b" value="option2" required>
+                    <label class="form-check-label" for="optionsRadios4b">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios4" id="optionsRadios4c" value="option3" required>
+                    <label class="form-check-label" for="optionsRadios4c">
+                        Not Sure
+                    </label>
+                </div>
+            </fieldset><br></br>
+
+            <fieldset class="form-group">
+                <p>5. Can you build a machine learning model that makes predictions?</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios5" id="optionsRadios5a" value="option1" required>
+                    <label class="form-check-label" for="optionsRadios5a">
+                        Yes
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios5" id="optionsRadios5b" value="option2" required>
+                    <label class="form-check-label" for="optionsRadios5b">
+                        No
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="optionsRadios5" id="optionsRadios5c" value="option3" required>
+                    <label class="form-check-label" for="optionsRadios5c">
+                        Not Sure
+                    </label>
+                </div>
+            </fieldset><br></br>
+            <button type="submit" class="btn btn-light" style="padding: 10px 20px;
+            margin-right: 50px;" form="mlForm" onclick="mlr.html">Submit</button>
+            <button type="reset" class="btn btn-light" style="padding: 10px 20px; 
+            margin-right: 50px;" form="mlForm">Reset</button><br></br>
+            </form>
+        </div>
+    </div>
+</body>
+<footer class="footer">
+        <p>Copyrights&copy2023</p>
+</footer>
+</html>
