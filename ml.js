@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('mlForm');
+    var resultContainer = document.getElementById('resultContainer');
 
     function submitForm(formDataObject) {
         fetch('http://127.0.0.1:5000/predict_proficiency', {
@@ -13,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .then(data => {
             console.log(data);
             var predictedLevel = data.predicted_level;
-            alert('You are ' + predictedLevel + ' in Machine Learning');
+            resultContainer.innerHTML = 'You are ' + predictedLevel + ' in Machine Learning!!!';
         })
         .catch(error => console.error('Error:', error));
     }
@@ -53,4 +54,25 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return null;
     }
+
+    function resetForm() {
+        var radioButtons = form.querySelectorAll('input[type="radio"]');
+        radioButtons.forEach(function (radioButton) {
+            radioButton.checked = false;
+        });
+    
+        resultContainer.innerHTML = '';
+    }
+    var resetButton = form.querySelector('button[type="reset"]');
+    resetButton.addEventListener('click', resetForm);
+    
+    function toggleNavbar() {
+        var navbarCollapse = document.getElementById('navbarColor01');
+        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
+            navbarCollapse.style.display = 'block';
+        } else {
+            navbarCollapse.style.display = 'none';
+        }
+    }
 });
+

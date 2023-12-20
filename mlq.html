@@ -47,11 +47,17 @@
             margin-top: 30px;
         }
         .btn:focus, .btn:active {
-    outline: none; 
-    box-shadow: none; 
-    color: black;
+            outline: none; 
+            box-shadow: none; 
+            color: black;
 
-}
+        }
+        #resultContainer {
+            padding: 0px 0px 50px 0px;
+            font-size: 32px;
+            color: rgb(50, 100, 150);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
@@ -187,10 +193,11 @@
                     </label>
                 </div>
             </fieldset><br></br>
+            <div id="resultContainer"></div>
             <div class="row">
             <div class="col-12">
             <button type="submit" class="btn btn-light" style="padding: 10px 20px;
-            margin-right: 50px;" form="mlForm">Submit</button>
+            margin-right: 50px; " onclick="resetForm()" form="mlForm">Submit</button>
             <button type="reset" class="btn btn-light" style="padding: 10px 20px; 
             margin-right: 50px;" form="mlForm">Reset</button><br></br>
             </div>
@@ -199,16 +206,6 @@
         </div>
     </div>
 </body>
-<script>
-    function toggleNavbar() {
-        var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-            navbarCollapse.style.display = 'block';
-        } else {
-            navbarCollapse.style.display = 'none';
-        }
-    }
-</script>
 <footer class="footer">
         <p>Copyrights&copy2023</p>
 </footer>
