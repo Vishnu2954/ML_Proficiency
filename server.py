@@ -30,7 +30,7 @@ if __name__ == "__main__":
     print("Loading artifacts...")
     util.load_artifacts()
     print("Artifacts loaded.")
-    app.run()
+    app.run(debug=False)
 
 
 
