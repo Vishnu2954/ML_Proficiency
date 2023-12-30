@@ -1,7 +1,3 @@
-document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('mlForm');
-    var resultContainer = document.getElementById('resultContainer');
-
         function resetForm() {
         var radioButtons = form.querySelectorAll('input[type="radio"]');
         radioButtons.forEach(function (radioButton) {
@@ -13,6 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var resetButton = form.querySelector('button[type="reset"]');
     resetButton.addEventListener('click', resetForm);
+
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('mlForm');
+    var resultContainer = document.getElementById('resultContainer');
 
     function submitForm(formDataObject) {
         fetch('https://ml-proficiency.onrender.com/predict_proficiency', {
