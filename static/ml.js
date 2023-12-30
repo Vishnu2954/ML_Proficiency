@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var resultContainer = document.getElementById('resultContainer');
 
     function submitForm(formDataObject) {
-        fetch('http://127.0.0.1:5000/predict_proficiency', {
+        fetch('/predict_proficiency', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -16,7 +16,10 @@ document.addEventListener('DOMContentLoaded', function () {
             var predictedLevel = data.predicted_level;
             resultContainer.innerHTML = 'You are ' + predictedLevel + ' in Machine Learning!!!';
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            console.error('Error:', error);
+            resultContainer.innerHTML = 'An error occurred. Please try again.';
+        });
     }
 
     form.addEventListener('submit', function (event) {
@@ -68,11 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function toggleNavbar() {
         var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-            navbarCollapse.style.display = 'block';
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
         } else {
-            navbarCollapse.style.display = 'none';
+            navbarCollapse.classList.add('show');
         }
     }
 });
-
