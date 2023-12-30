@@ -1,3 +1,7 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var form = document.getElementById('mlForm');
+    var resultContainer = document.getElementById('resultContainer');
+
         function resetForm() {
         var radioButtons = form.querySelectorAll('input[type="radio"]');
         radioButtons.forEach(function (radioButton) {
@@ -6,10 +10,6 @@
     
         resultContainer.innerHTML = '';
     }
-
-document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('mlForm');
-    var resultContainer = document.getElementById('resultContainer');
 
         var resetButton = form.querySelector('button[type="reset"]');
         resetButton.addEventListener('click', resetForm);
