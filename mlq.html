@@ -206,11 +206,13 @@
     </div>
 </body>
 <script>
+    var form;
+    var resultContainer;
     document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('mlForm');
-    var resultContainer = document.getElementById('resultContainer');
+    form = document.getElementById('mlForm');
+    resultContainer = document.getElementById('resultContainer');
 
-        function resetForm() {
+    function resetForm() {
         var radioButtons = form.querySelectorAll('input[type="radio"]');
         radioButtons.forEach(function (radioButton) {
             radioButton.checked = false;
@@ -285,9 +287,6 @@
         }
         return null;
     }
-
-    var resetButton = form.querySelector('button[type="reset"]');
-    resetButton.addEventListener('click', resetForm);
     
     function toggleNavbar() {
         var navbarCollapse = document.getElementById('navbarColor01');
