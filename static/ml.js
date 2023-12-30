@@ -3,18 +3,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var resultContainer = document.getElementById('resultContainer');
 
     function submitForm(formDataObject) {
-        fetch('/predict_proficiency', {
+        fetch('https://ml-proficiency.onrender.com/predict_proficiency', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(formDataObject),
         })
-        .then(response => response.json())
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
             console.log(data);
-            var predictedLevel = data.predicted_level;
-            resultContainer.innerHTML = 'You are ' + predictedLevel + ' in Machine Learning!!!';
+            if (data.predicted_level) {
+                resultContainer.innerHTML = 'You are ' + data.predicted_level + ' in Machine Learning!!!';
+            } else {
+                resultContainer.innerHTML = 'An unexpected response was received. Please try again.';
+            }
         })
         .catch(error => {
             console.error('Error:', error);
@@ -66,15 +74,16 @@ document.addEventListener('DOMContentLoaded', function () {
     
         resultContainer.innerHTML = '';
     }
+
     var resetButton = form.querySelector('button[type="reset"]');
     resetButton.addEventListener('click', resetForm);
     
     function toggleNavbar() {
         var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.classList.contains('show')) {
-            navbarCollapse.classList.remove('show');
+        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
+            navbarCollapse.style.display = 'block';
         } else {
-            navbarCollapse.classList.add('show');
+            navbarCollapse.style.display = 'none';
         }
     }
 });
