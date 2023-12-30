@@ -5,6 +5,14 @@ import util
 app = Flask(__name__)
 CORS(app)
 
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/mlq')
+def mlq():
+    return render_template('mlq.html')
+
 @app.route('/get_que', methods=['GET'])
 def get_que():
     response = jsonify({
