@@ -4,7 +4,7 @@ import pickle
 __que = None
 __datacolumns = None
 __model = None
-c
+
 def get_que():
     return __que
 

@@ -1,9 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import util
 
-app = Flask(__name__)
+app = Flask(__name__, template_folder='.')
 CORS(app)
+
+@app.route('/profile')
+def profile():
+    return render_template('profile.html')
+
+@app.route('/mlq')
+def mlq():
+    return render_template('mlq.html')
 
 @app.route('/get_que', methods=['GET'])
 def get_que():
@@ -30,7 +38,7 @@ if __name__ == "__main__":
     print("Loading artifacts...")
     util.load_artifacts()
     print("Artifacts loaded.")
-    app.run()
+    app.run(debug=True)
 
 
 
