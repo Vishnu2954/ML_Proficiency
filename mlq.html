@@ -216,6 +216,9 @@
 
     resultContainer.innerHTML = '';
 }
+    
+    var resetButton = form.querySelector('button[type="reset"]');
+    resetButton.addEventListener('click', resetForm);
 
 document.addEventListener('DOMContentLoaded', function () {
     form = document.getElementById('mlForm');
@@ -273,9 +276,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         return null;
     }
-
-    var resetButton = form.querySelector('button[type="reset"]');
-    resetButton.addEventListener('click', resetForm);
 
     function toggleNavbar() {
         var navbarCollapse = document.getElementById('navbarColor01');
