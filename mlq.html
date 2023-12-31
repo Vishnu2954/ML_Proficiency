@@ -206,6 +206,7 @@
     </div>
 </body>
 <script>
+    var form;
     function resetForm() {
     var radioButtons = form.querySelectorAll('input[type="radio"]');
     radioButtons.forEach(function (radioButton) {
@@ -216,7 +217,7 @@
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('mlForm');
+    form = document.getElementById('mlForm');
     var resultContainer = document.getElementById('resultContainer');
 
     function submitForm(formDataObject) {
