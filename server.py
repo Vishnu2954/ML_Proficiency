@@ -38,7 +38,7 @@ if __name__ == "__main__":
     print("Loading artifacts...")
     util.load_artifacts()
     print("Artifacts loaded.")
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=5000)
 
 
 
