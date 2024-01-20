@@ -3,7 +3,7 @@ from flask_cors import CORS
 import util
 
 app = Flask(__name__, template_folder='.')
-CORS(app)
+CORS(app, resources={r"/predict_proficiency": {"origins": "https://ml-proficiency.onrender.com"}})
 
 @app.route('/profile')
 def profile():
