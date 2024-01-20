@@ -1,18 +1,18 @@
+var form;
 document.addEventListener('DOMContentLoaded', function () {
-    var form = document.getElementById('mlForm');
+    form = document.getElementById('mlForm');
     var resultContainer = document.getElementById('resultContainer');
 
-        function resetForm() {
+    function resetForm() {
         var radioButtons = form.querySelectorAll('input[type="radio"]');
         radioButtons.forEach(function (radioButton) {
             radioButton.checked = false;
         });
-    
+
         resultContainer.innerHTML = '';
     }
 
-        var resetButton = form.querySelector('button[type="reset"]');
-        resetButton.addEventListener('click', resetForm);
+    var resetButton = form.querySelector('button[type="reset"]');
 
     function submitForm(formDataObject) {
         fetch('https://ml-proficiency.onrender.com/predict_proficiency', {
@@ -78,9 +78,9 @@ document.addEventListener('DOMContentLoaded', function () {
         return null;
     }
 
-    var resetButton = form.querySelector('button[type="reset"]');
-    resetButton.addEventListener('click', resetForm);
-    
+    var navbarToggle = document.getElementById('navbarToggle');
+    navbarToggle.addEventListener('click', toggleNavbar);
+
     function toggleNavbar() {
         var navbarCollapse = document.getElementById('navbarColor01');
         if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
