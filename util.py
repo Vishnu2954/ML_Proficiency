@@ -19,6 +19,21 @@ def load_artifacts():
     print(f"Columns Path: {columns_path}")
     print(f"Model Path: {model_path}")
 
+    try:
+        with open(columns_path, 'r') as f:
+            __datacolumns = json.load(f)['datacolumns']
+            __que = __datacolumns[0:]
+    except Exception as e:
+        print(f"Error loading columns.json: {e}")
+
+    try:
+        with open(model_path, 'rb') as f:
+            __model = pickle.load(f)
+    except Exception as e:
+        print(f"Error loading MLprojectRFC: {e}")
+
+    print(f"Loaded __que: {__que}")
+
     with open(columns_path, 'r') as f:
         __datacolumns = json.load(f)['datacolumns']
         __que = __datacolumns[0:]
