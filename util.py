@@ -13,11 +13,17 @@ def load_artifacts():
     global __que
     global __model
 
-    with open("./artifacts/columns.json", 'r') as f:
+    columns_path = 'columns.json'
+    model_path = 'MLprojectRFC'
+
+    print(f"Columns Path: {columns_path}")
+    print(f"Model Path: {model_path}")
+
+    with open(columns_path, 'r') as f:
         __datacolumns = json.load(f)['datacolumns']
         __que = __datacolumns[0:]
 
-    with open("./artifacts/MLprojectRFC", 'rb') as f:
+    with open(model_path, 'rb') as f:
         __model = pickle.load(f)
 
 def encode_user_input(response):
