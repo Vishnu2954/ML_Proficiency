@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var resultContainer = document.getElementById('resultContainer');
 
     function submitForm(formDataObject) {
-        fetch('https://ml-proficiency.onrender.com/predict_proficiency', {
+        fetch('/predict_proficiency', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
