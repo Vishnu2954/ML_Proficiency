@@ -184,13 +184,14 @@
     </div>
     <script>
         function toggleNavbar() {
-            var navbarCollapse = document.getElementById('navbarColor01');
-            if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-                navbarCollapse.style.display = 'block';
-            } else {
-                navbarCollapse.style.display = 'none';
-            }
+        var navbarCollapse = document.getElementById('navbarCollapse');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
+        } 
+        else {
+            navbarCollapse.classList.add('show');
         }
+    }
 
         window.addEventListener('orientationchange', function () {
         adjustResumeContainerWidth();
