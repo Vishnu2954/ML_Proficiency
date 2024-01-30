@@ -56,23 +56,23 @@
     </style>
 </head>
 <body>
-   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_for('mlq') }}">Projects</a>
-                </li>
-            </ul>
+     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div id="navbarColor01" class="navbar-collapse">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('mlq') }}">Projects</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <h2 style="text-align: center; margin-top: 20px;">Test your Machine Learning Proficiency!</h2>
 
@@ -201,6 +201,16 @@
         </div>
     </div>
 </body>
+<script>
+     function toggleNavbar() {
+        var navbarCollapse = document.getElementById('navbarColor01');
+        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
+            navbarCollapse.style.display = 'block';
+        } else {
+            navbarCollapse.style.display = 'none';
+        }
+    }
+</script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('mlForm');
