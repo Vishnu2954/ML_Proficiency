@@ -270,12 +270,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var resetButton = form.querySelector('button[type="reset"]');
     resetButton.addEventListener('click', resetForm);
     
-    function toggleNavbar() {
-        var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-            navbarCollapse.style.display = 'block';
+     function toggleNavbar() {
+        var navbarCollapse = document.getElementById('navbarCollapse');
+        if (navbarCollapse.classList.contains('show')) {
+            navbarCollapse.classList.remove('show');
         } else {
-            navbarCollapse.style.display = 'none';
+            navbarCollapse.classList.add('show');
         }
     }
 });
