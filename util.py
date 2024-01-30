@@ -13,15 +13,6 @@ def load_artifacts():
     global __datacolumns
     global __que
     global __model
-    
-    current_dir = os.path.dirname(os.path.abspath(__file__))
-    artifacts_dir = os.path.join(current_dir, 'ML_Proficiency')
-
-    columns_path = os.path.join(artifacts_dir, 'columns.json')
-    model_path = os.path.join(artifacts_dir, 'MLprojectRFC')
-
-    print(f"Columns Path: {columns_path}")
-    print(f"Model Path: {model_path}")
 
     try:
         with open('columns.json', 'r') as f:
