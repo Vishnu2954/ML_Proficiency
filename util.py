@@ -13,8 +13,7 @@ def load_artifacts():
     global __datacolumns
     global __que
     global __model
-
-    # Assuming util.py is in the ML_Proficiency directory
+    
     current_dir = os.path.dirname(os.path.abspath(__file__))
     artifacts_dir = os.path.join(current_dir, 'ML_Proficiency')
 
@@ -25,14 +24,14 @@ def load_artifacts():
     print(f"Model Path: {model_path}")
 
     try:
-        with open(columns_path, 'r') as f:
+        with open('columns.json', 'r') as f:
             __datacolumns = json.load(f)['datacolumns']
             __que = __datacolumns[0:]
     except Exception as e:
         print(f"Error loading columns.json: {e}")
 
     try:
-        with open(model_path, 'rb') as f:
+        with open('MLprojectRFC', 'rb') as f:
             __model = pickle.load(f)
     except Exception as e:
         print(f"Error loading MLprojectRFC: {e}")
