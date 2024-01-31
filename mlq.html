@@ -216,6 +216,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('mlForm');
     var resultContainer = document.getElementById('resultContainer');
 
+       var syllabi = {
+        'Beginner': 'Introduction to ML, Python basics, Supervised Learning, Basic Evaluation Metrics',
+        'Intermediate': 'Ensemble Methods, Unsupervised Learning, Advanced Evaluation Metrics',
+        'Advanced': 'Deep Learning, Reinforcement Learning, NLP, Model Deployment'
+    };
+
     function submitForm(formDataObject) {
         fetch('/predict_proficiency', {
             method: 'POST',
@@ -229,6 +235,9 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log(data);
             var predictedLevel = data.predicted_level;
             resultContainer.innerHTML = 'You are ' + predictedLevel + ' in Machine Learning!!!';
+            if (syllabi.hasOwnProperty(predictedLevel)) {
+                resultContainer.innerHTML += '<br>' + 'Recommended Syllabus: ' + syllabi[predictedLevel];
+            }
         })
         .catch(error => console.error('Error:', error));
     }
