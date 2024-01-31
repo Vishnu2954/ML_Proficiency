@@ -22,10 +22,10 @@ def load_artifacts():
         print(f"Error loading columns.json: {e}")
 
     try:
-        with open('MLprojectRFC', 'rb') as f:
+        with open('MLprojectDTC', 'rb') as f:
             __model = pickle.load(f)
     except Exception as e:
-        print(f"Error loading MLprojectRFC: {e}")
+        print(f"Error loading MLprojectDTC: {e}")
 
     print(f"Loaded __que: {__que}")
 
