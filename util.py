@@ -29,7 +29,7 @@ def load_artifacts():
     print(f"Loaded __que: {__que}")
 
 def encode_user_input(response):
-    encoding_mapping = {'yes': 1, 'no': -1, 'not sure': 0}
+    encoding_mapping = {'yes': 1, 'no': 0, 'not sure': 0}
     return encoding_mapping.get(response.lower(), 0)
 
 def predict_user_proficiency(user_responses):
