@@ -53,6 +53,17 @@
             color: rgb(50, 100, 150);
             text-align: center;
         }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
@@ -74,9 +85,9 @@
         </div>
     </nav>
 
-    <h2 style="text-align: center; margin-top: 20px;">Test your Machine Learning Proficiency!</h2>
+    <h2 class="fade-in" style="text-align: center; margin-top: 20px;">Test your Machine Learning Proficiency!</h2>
 
-    <div class="container">
+    <div class="container fade-in">
         <form id="mlForm">
         <div class="questions">
             <fieldset class="form-group">
@@ -210,6 +221,29 @@
             navbarCollapse.style.display = 'none';
         }
     }
+    document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
@@ -288,6 +322,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var resetButton = form.querySelector('button[type="reset"]');
     resetButton.addEventListener('click', resetForm);
+
 });
 </script>
 <footer class="footer">
