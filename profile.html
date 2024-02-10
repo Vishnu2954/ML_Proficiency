@@ -31,7 +31,7 @@
             margin-top: 30px;
         }
 
-        .footer social-icons{
+        .footer .social-icons{
             background-color: rgb(115, 185, 165); 
             padding: 5px 0px 5px 0px;
             text-align: center;
@@ -90,6 +90,17 @@
         .resume-content hr {
             color: rgb(100, 100, 100);
         }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s, transform 0.5s;
+        }
+
+        .fade-in.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
         
     </style>
 </head>
@@ -112,9 +123,9 @@
         </div>
     </nav>
 
-    <h2 style="text-align: center; margin-top: 20px;">Welcome to my Portfolio!!!</h2>
+    <h2 class="container fade-in" style="text-align: center; margin-top: 20px;">Welcome to my Portfolio!!!</h2>
 
-    <div class="container">
+    <div class="container fade-in">
         <section>
             <div class="about" style="margin-top: 70px;">
                 <h4 style="text-align: center;">I'm Vishnu K </h4>
@@ -131,7 +142,7 @@
         </section>
     </div>
 
-    <div class="container">
+    <div class="container fade-in">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h4 style="text-align: center;">Resume</h4>
@@ -195,7 +206,6 @@
         window.addEventListener('orientationchange', function () {
         adjustResumeContainerWidth();
     });
-
         function adjustResumeContainerWidth() {
             var resumeContainer = document.querySelector('.resume-container');
             if (window.innerWidth <= 768) {
@@ -203,6 +213,29 @@
             } 
         }
         adjustResumeContainerWidth();
+        document.addEventListener('DOMContentLoaded', function() {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+     document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
     </script>
     <footer class="footer">
         <p>Copyrights&copy; 2023</p>
