@@ -349,6 +349,9 @@ document.addEventListener('DOMContentLoaded', function () {
     
         resultContainer.innerHTML = '';
     }
+    var resetButton = form.querySelector('button[type="reset"]');
+    resetButton.addEventListener('click', resetForm);
+    
  function toggleNavbar() {
         var navbarCollapse = document.getElementById('navbarColor01');
         if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
