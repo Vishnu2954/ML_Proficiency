@@ -10,7 +10,7 @@
     <style>
         .nav-link {
             color: rgb(235, 235, 235);
-            font-size: large;
+            font-size: larger;
             transition: color 0.5s;
         }
 
@@ -151,7 +151,7 @@
         <div class="questions">
             <div class="question-container">
             <fieldset class="form-group">
-                <p style="margin-top: 40px;">1. Have you heard of the term "machine learning" before?</p>
+                <p style="margin-top: 25px; font-size: larger;">1. Have you heard of the term "machine learning" before?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="optionsRadios1" id="optionsRadios1a" value="option1" required>
                     <label class="form-check-label" for="optionsRadios1a">
@@ -174,7 +174,7 @@
             </div>
             <div class="question-container">
             <fieldset class="form-group">
-                <p>2. Are you aware of any common applications of machine learning?</p>
+                <p style="margin-top: 25px; font-size: larger;">2. Are you aware of any common applications of machine learning?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="optionsRadios2" id="optionsRadios2a" value="option1" required>
                     <label class="form-check-label" for="optionsRadios2a">
@@ -197,7 +197,7 @@
             </div>
             <div class="question-container">
             <fieldset class="form-group">
-                <p>3. Did you ever come across machine learning in your field?</p>
+                <p style="margin-top: 25px; font-size: larger;">3. Did you ever come across machine learning in your field?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="optionsRadios3" id="optionsRadios3a" value="option1" required >
                     <label class="form-check-label" for="optionsRadios3a">
@@ -220,7 +220,7 @@
             </div>
             <div class="question-container">
             <fieldset class="form-group">
-                <p>4. Do you know about supervised and unsupervised learning in machine learning?</p>
+                <p style="margin-top: 25px; font-size: larger;">4. Do you know about supervised and unsupervised learning in machine learning?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="optionsRadios4" id="optionsRadios4a" value="option1" required >
                     <label class="form-check-label" for="optionsRadios4a">
@@ -243,7 +243,7 @@
             </div>
             <div class="question-container">
             <fieldset class="form-group">
-                <p>5. Can you build a machine learning model that makes predictions?</p>
+                <p style="margin-top: 25px; font-size: larger;">5. Can you build a machine learning model that makes predictions?</p>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="optionsRadios5" id="optionsRadios5a" value="option1" required>
                     <label class="form-check-label" for="optionsRadios5a">
@@ -276,40 +276,6 @@
         </div>
     </div>
 </body>
-<script>
-     function toggleNavbar() {
-        var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-            navbarCollapse.style.display = 'block';
-        } else {
-            navbarCollapse.style.display = 'none';
-        }
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-    document.querySelectorAll('.fade-in').forEach(section => {
-            observer.observe(section);
-        });
-    });
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-</script>
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     var form = document.getElementById('mlForm');
@@ -385,7 +351,36 @@ document.addEventListener('DOMContentLoaded', function () {
     
         resultContainer.innerHTML = '';
     }
+ function toggleNavbar() {
+        var navbarCollapse = document.getElementById('navbarColor01');
+        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
+            navbarCollapse.style.display = 'block';
+        } else {
+            navbarCollapse.style.display = 'none';
+        }
+    }
 
+    const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+    document.querySelectorAll('.fade-in').forEach(section => {
+            observer.observe(section);
+        });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
 });
 </script>
 <footer class="footer">
