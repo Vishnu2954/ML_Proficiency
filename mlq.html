@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -14,6 +13,7 @@
             color: rgb(235, 235, 235);
             font-size: larger;
             transition: color 0.5s;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .nav-link:hover {
@@ -36,7 +36,7 @@
                 border-radius: 10px;
                 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
                 font-size: large;
-         font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
             }
             
      @media (max-width: 768px) {
@@ -116,12 +116,12 @@
     </style>
 </head>
 <body>
-     <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div id="navbarColor01" class="navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
@@ -130,20 +130,20 @@
                         <a class="nav-link" href="{{ url_for('mlq') }}">Projects</a>
                     </li>
                 </ul>
-            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="mailto: vishnu290504@gmail.com" target="_blank">
-                            <i class="far fa-envelope"></i> 
+                            <i class="far fa-envelope"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/" target="_blank">
-                            <i class="fab fa-linkedin"></i> 
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/Vishnu2954" target="_blank">
-                            <i class="fab fa-github"></i> 
+                            <i class="fab fa-github"></i>
                         </a>
                     </li>
                 </ul>
@@ -359,15 +359,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     var resetButton = form.querySelector('button[type="reset"]');
     resetButton.addEventListener('click', resetForm);
-    
- function toggleNavbar() {
-        var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-            navbarCollapse.style.display = 'block';
-        } else {
-            navbarCollapse.style.display = 'none';
-        }
-    }
 
     const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
