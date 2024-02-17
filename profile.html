@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootswatch@4.5.2/dist/minty/bootstrap.min.css" integrity="sha384-H4X+4tKc7b8s4GoMrylmy2ssQYpDHoqzPa9aKXbDwPoPUA3Ra8PA5dGzijN+ePnH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
     <title>Portfolio</title>
     <style>
         .nav-link {
             color: rgb(235, 235, 235);
             font-size: larger;
             transition: color 0.5s;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .nav-link:hover {
@@ -30,10 +32,12 @@
             font-size: 24px;
             width: 100%;
             margin-top: 30px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .about {
             text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
 
         .resume-container {
@@ -96,12 +100,12 @@
     </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" onclick="toggleNavbar()">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div id="navbarColor01" class="navbar-collapse">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
@@ -110,20 +114,20 @@
                         <a class="nav-link" href="{{ url_for('mlq') }}">Projects</a>
                     </li>
                 </ul>
-            <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="mailto: vishnu290504@gmail.com" target="_blank">
-                            <i class="far fa-envelope"></i> 
+                            <i class="far fa-envelope"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://www.linkedin.com/in/vishnu-kannabiran-5b87a824b/" target="_blank">
-                            <i class="fab fa-linkedin"></i> 
+                            <i class="fab fa-linkedin"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://github.com/Vishnu2954" target="_blank">
-                            <i class="fab fa-github"></i> 
+                            <i class="fab fa-github"></i>
                         </a>
                     </li>
                 </ul>
@@ -133,7 +137,7 @@
 
     <h2 class="fade-in" style="text-align: center; margin-top: 20px;">Welcome to my Portfolio!!!</h2>
 
-    <div class="container fade-in">
+    <div class="container fade-in" style="font-family: Verdana, Geneva, Tahoma, sans-serif;">
         <section>
             <div class="about" style="margin-top: 70px;">
                 <h4 style="text-align: center;">I'm Vishnu K </h4>
@@ -153,7 +157,7 @@
    <div class="container fade-in">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <h4 style="text-align: center;">Resume</h4>
+                <h4 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">Resume</h4>
                 <div class="resume-container">
                     <div class="resume-content" style="text-align: left;">
                         <p style="font-size: 24px; text-align: center;"><strong>Vishnu Kannabiran</strong></p>
@@ -202,19 +206,6 @@
     </div>
     
     <script>
-       
-    function toggleNavbar() {
-        var navbarCollapse = document.getElementById('navbarColor01');
-        if (navbarCollapse.style.display === 'none' || navbarCollapse.style.display === '') {
-            navbarCollapse.style.display = 'block';
-        } else {
-            navbarCollapse.style.display = 'none';
-        }
-    }
-
-        window.addEventListener('orientationchange', function () {
-        adjustResumeContainerWidth();
-    });
         function adjustResumeContainerWidth() {
             var resumeContainer = document.querySelector('.resume-container');
             if (window.innerWidth <= 768) {
