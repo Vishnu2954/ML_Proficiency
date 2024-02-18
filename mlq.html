@@ -316,28 +316,35 @@ document.addEventListener('DOMContentLoaded', function () {
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
-        var formDataObject = {
-            'q1_yes': mapRadioValue('optionsRadios1'),
-            'q2_yes': mapRadioValue('optionsRadios2'),
-            'q3_yes': mapRadioValue('optionsRadios3'),
-            'q4_yes': mapRadioValue('optionsRadios4'),
-            'q5_yes': mapRadioValue('optionsRadios5'),
-        };
+       var formDataObject = {
+        'q1_not sure': mapRadioValue('optionsRadios1')['qi_not sure'],
+        'q1_yes': mapRadioValue('optionsRadios1')['qi_yes'],
+        'q2_not sure': mapRadioValue('optionsRadios2')['qi_not sure'],
+        'q2_yes': mapRadioValue('optionsRadios2')['qi_yes'],
+        'q3_not sure': mapRadioValue('optionsRadios3')['qi_not sure'],
+        'q3_yes': mapRadioValue('optionsRadios3')['qi_yes'],
+        'q4_not sure': mapRadioValue('optionsRadios4')['qi_not sure'],
+        'q4_yes': mapRadioValue('optionsRadios4')['qi_yes'],
+        'q5_not sure': mapRadioValue('optionsRadios5')['qi_not sure'],
+        'q5_yes': mapRadioValue('optionsRadios5')['qi_yes']
+    };
+
 
         submitForm(formDataObject);
     });
 
     function mapRadioValue(name) {
-        var value = getRadioValue(name);
-        if (value === 'option1') {
-            return 'Yes';
-        } else if (value === 'option2') {
-            return 'No';
-        } else if (value === 'option3') {
-            return 'Not Sure';
-        }
-        return null;
+    var value = getRadioValue(name);
+    if (value === 'option1') {
+        return { 'qi_not sure': 'zero', 'qi_yes': 'one' };
+    } else if (value === 'option2') {
+        return { 'qi_not sure': 'zero', 'qi_yes': 'zero' };
+    } else if (value === 'option3') {
+        return { 'qi_not sure': 'one', 'qi_yes': 'zero' };
     }
+    return null;
+    }
+
 
     function getRadioValue(name) {
         var radios = form.elements[name];
