@@ -35,16 +35,13 @@ def encode_user_input(response):
 def predict_user_proficiency(user_responses):
     print("User Responses:", user_responses)
 
-    user_input = [encode_user_input(user_responses.get(col, 'not sure')) for col in get_que()]
+    user_input = [encode_user_input(user_responses.get(col)) for col in get_que()]
 
     print("User Input:", user_input)
 
     predicted_level_encoded = __model.predict([user_input])[0]
     proficiency_levels = {0: 'Beginner', 1: 'Intermediate', 2: 'Advanced'}
-    predicted_level = proficiency_levels.get(predicted_level_encoded, 'Unknown')
-
-    print("Predicted Level Encoded:", predicted_level_encoded)
-    print("Predicted Level:", predicted_level)
+    predicted_level = proficiency_levels.get(predicted_level_encoded)
 
     return predicted_level
 
