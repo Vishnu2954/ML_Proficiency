@@ -30,7 +30,7 @@ def load_artifacts():
 
 def encode_user_input(response):
     encoding_mapping = {'yes': 1, 'no': 0, 'not sure': 0}
-    return encoding_mapping.get(response.lower(), 0)
+    return encoding_mapping.get(response.lower())
 
 def predict_user_proficiency(user_responses):
     print("User Responses:", user_responses)
@@ -42,6 +42,9 @@ def predict_user_proficiency(user_responses):
     predicted_level_encoded = __model.predict([user_input])[0]
     proficiency_levels = {0: 'Beginner', 1: 'Intermediate', 2: 'Advanced'}
     predicted_level = proficiency_levels.get(predicted_level_encoded)
+
+    print("Predicted Level Encoded:", predicted_level_encoded)
+    print("Predicted Level:", predicted_level)
 
     return predicted_level
 
