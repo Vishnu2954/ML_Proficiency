@@ -317,16 +317,16 @@ document.addEventListener('DOMContentLoaded', function () {
         event.preventDefault();
 
        var formDataObject = {
-        'q1_not sure': mapRadioValue('optionsRadios1')['qi_not sure'],
-        'q1_yes': mapRadioValue('optionsRadios1')['qi_yes'],
-        'q2_not sure': mapRadioValue('optionsRadios2')['qi_not sure'],
-        'q2_yes': mapRadioValue('optionsRadios2')['qi_yes'],
-        'q3_not sure': mapRadioValue('optionsRadios3')['qi_not sure'],
-        'q3_yes': mapRadioValue('optionsRadios3')['qi_yes'],
-        'q4_not sure': mapRadioValue('optionsRadios4')['qi_not sure'],
-        'q4_yes': mapRadioValue('optionsRadios4')['qi_yes'],
-        'q5_not sure': mapRadioValue('optionsRadios5')['qi_not sure'],
-        'q5_yes': mapRadioValue('optionsRadios5')['qi_yes']
+        'q1_not sure': mapRadioValue('optionsRadios1')['not sure'],
+        'q1_yes': mapRadioValue('optionsRadios1')['yes'],
+        'q2_not sure': mapRadioValue('optionsRadios2')['not sure'],
+        'q2_yes': mapRadioValue('optionsRadios2')['yes'],
+        'q3_not sure': mapRadioValue('optionsRadios3')['not sure'],
+        'q3_yes': mapRadioValue('optionsRadios3')['yes'],
+        'q4_not sure': mapRadioValue('optionsRadios4')['not sure'],
+        'q4_yes': mapRadioValue('optionsRadios4')['yes'],
+        'q5_not sure': mapRadioValue('optionsRadios5')['not sure'],
+        'q5_yes': mapRadioValue('optionsRadios5')['yes']
     };
 
 
@@ -336,11 +336,11 @@ document.addEventListener('DOMContentLoaded', function () {
     function mapRadioValue(name) {
     var value = getRadioValue(name);
     if (value === 'option1') {
-        return { 'qi_not sure': 'zero', 'qi_yes': 'one' };
+        return { 'not sure': 'zero', 'yes': 'one' };
     } else if (value === 'option2') {
-        return { 'qi_not sure': 'zero', 'qi_yes': 'zero' };
+        return { 'not sure': 'zero', 'yes': 'zero' };
     } else if (value === 'option3') {
-        return { 'qi_not sure': 'one', 'qi_yes': 'zero' };
+        return { 'not sure': 'one', 'yes': 'zero' };
     }
     return null;
     }
