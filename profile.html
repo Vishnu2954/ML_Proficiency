@@ -20,12 +20,12 @@
             color: white;
         }
 
-        .navbar {
-            background-color: rgb(115, 185, 165); 
+         .navbar {
+            background-color: rgb(50, 50, 50); 
         }
 
         .footer {
-            background-color: rgb(115, 185, 165); 
+            background-color: rgb(50, 50, 50); 
             padding: 5px 0px 5px 0px;
             text-align: center;
             color: rgb(255, 255, 255);
@@ -33,6 +33,42 @@
             width: 100%;
             margin-top: 30px;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .onyx .navbar,
+        .onyx .footer{
+            background-color: rgb(100, 185, 155);
+        }
+
+        .onyx .container {
+            background-color: rgb(215, 245, 235);
+        }
+
+        .ebony .navbar,
+        .ebony .footer{
+            background-color: rgb(190, 100, 110);
+        }
+
+        .ebony .container {
+            background-color: rgb(250, 224, 224);
+        }
+
+        .twilight .navbar,
+        .twilight .footer{
+            background-color: rgb(100, 150, 190);
+        }
+
+        .twilight .container {
+            background-color: rgb(224, 240, 250);
+        }
+
+        .shadow .navbar,
+        .shadow .footer{
+            background-color: rgb(50, 50, 50); 
+        }
+
+        .shadow .container {
+            background-color: rgb(235, 235, 235);
         }
 
         .about {
@@ -130,6 +166,10 @@
                             <i class="fab fa-github"></i>
                         </a>
                     </li>
+                    <li class="nav-item">
+                    <div class="theme-toggler" style="position: absolute; top: 50%; transform: translateY(-50%); color: white; right: 125px;">
+                        <i class="fas fa-adjust fa-1x" id="theme-toggler-icon" onclick="toggleTheme()"></i>
+                </li>
                 </ul>
             </div>
         </div>
@@ -239,6 +279,13 @@
             });
         });
     });
+     var themes = ['onyx', 'ebony', 'twilight', 'shadow'];
+    var currentThemeIndex = -1;
+    function toggleTheme() {
+            currentThemeIndex = (currentThemeIndex + 1) % themes.length;
+            var theme = themes[currentThemeIndex];
+            document.body.className = theme;
+        }
     </script>
     <footer class="footer">
         <p>COPYRIGHTS&copy2024</p>
