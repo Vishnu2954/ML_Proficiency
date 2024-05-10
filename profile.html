@@ -33,11 +33,11 @@
         }
 
          .navbar {
-            background-color: rgb(50, 50, 50); 
+            background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%); 
         }
 
         .footer {
-            background-color: rgb(50, 50, 50); 
+            background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
             padding: 5px 0px 5px 0px;
             text-align: center;
             color: rgb(255, 255, 255);
@@ -48,25 +48,29 @@
         }
 
         .onyx .navbar,
-        .onyx .footer{
-            background-color: rgb(100, 185, 155);
+        .onyx .footer {
+            background: linear-gradient(90deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
         }
 
         .ebony .navbar,
-        .ebony .footer{
-            background-color: rgb(190, 100, 110);
+        .ebony .footer {
+            background: linear-gradient(90deg, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
         }
 
         .twilight .navbar,
-        .twilight .footer{
-            background-color: rgb(100, 150, 190);
+        .twilight .footer {
+            background: linear-gradient(90deg,  rgba(253,29,29,1) 0%, rgba(252,176,69,1) 100%);
+        }
+
+        .midnight .navbar,
+        .midnight .footer{
+            background: linear-gradient(90deg, rgb(234, 160, 192,1) 0%, rgba(148,187,233,1) 100%);
         }
 
         .shadow .navbar,
-        .shadow .footer{
-            background-color: rgb(50, 50, 50); 
+        .shadow .footer {
+            background: linear-gradient(90deg, rgba(52,152,219,1) 0%, rgb(84, 68, 173) 100%);
         }
-
         .about {
             text-align: center;
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -276,7 +280,7 @@
             });
         });
     });
-     var themes = ['onyx', 'ebony', 'twilight', 'shadow'];
+     var themes = ['onyx', 'ebony', 'twilight', 'midnight', 'shadow'];
     var currentThemeIndex = -1;
     function toggleTheme() {
             currentThemeIndex = (currentThemeIndex + 1) % themes.length;
