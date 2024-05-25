@@ -14,7 +14,7 @@ def projects():
     return render_template('projects.html')
 
 @app.route('/cruise')
-def profile():
+def cruise():
     return render_template('cruise.html')
 
 @app.route('/mlq')
