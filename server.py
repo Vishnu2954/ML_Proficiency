@@ -5,18 +5,6 @@ import util
 app = Flask(__name__, template_folder='.')
 CORS(app, resources={r"/predict_proficiency": {"origins": "https://ml-proficiency.onrender.com"}})
 
-@app.route('/profile')
-def profile():
-    return render_template('profile.html')
-
-@app.route('/projects')
-def projects():
-    return render_template('projects.html')
-
-@app.route('/cruise')
-def cruise():
-    return render_template('cruise.html')
-
 @app.route('/mlq')
 def mlq():
     return render_template('mlq.html')
