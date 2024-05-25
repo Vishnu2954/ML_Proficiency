@@ -9,6 +9,14 @@ CORS(app, resources={r"/predict_proficiency": {"origins": "https://ml-proficienc
 def profile():
     return render_template('profile.html')
 
+@app.route('/projects')
+def projects():
+    return render_template('projects.html')
+
+@app.route('/cruise')
+def profile():
+    return render_template('cruise.html')
+
 @app.route('/mlq')
 def mlq():
     return render_template('mlq.html')
