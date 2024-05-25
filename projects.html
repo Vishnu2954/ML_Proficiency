@@ -171,10 +171,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="profile.html">Profile</a>
+                        <a class="nav-link" href="{{ url_for('profile') }}">Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="projects.html">Projects</a>
+                        <a class="nav-link" href="{{ url_for('projects') }}">Projects</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ms-auto">
@@ -207,14 +207,14 @@
     <div class="carousel-container">
         <div class="owl-carousel owl-theme" id="carousel1">
             <div class="item">
-                <a href="cruise.html" target="_blank">
-                    <img src="images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg" alt="Image 1">
+                <a href="{{ url_for('cruise') }}" target="_blank">
+                    <img src="images/Gemini_Generated_Image_1v4lkl1v4lkl1v4l.jpg">
                 </a>
                 <p style = "font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Cruise - Chatbot </p>
             </div>
             <div class="item">
-                <a href="mlq.html" target="_blank">
-                    <img src="images/Gemini_Generated_Image_8tfs9q8tfs9q8tfs.jpg" alt="Image 2">
+                <a href="{{ url_for('mlq') }}" target="_blank">
+                    <img src="images/Gemini_Generated_Image_8tfs9q8tfs9q8tfs.jpg">
                 </a>
                 <p style="font-size: larger; font-weight:500; font-family: 'Noto Sans', 'Roboto', Calibri;"> Machine Learning proficiency predictor </p>
             </div>
